@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react';
 import { Avatar } from "antd";
 import { MessageOutlined } from '@ant-design/icons';
 
+interface CovidDataItem {
+    date: string;
+    metric_value: number;
+}
+
 const bottomCardStyle: React.CSSProperties = {
     justifyContent: 'space-between',
 };
@@ -33,7 +38,7 @@ const ChartCard = () => {
             height: 400,
         });
         pcrChart .data(
-            pcrData.map((item) => ({
+            pcrData.map((item: CovidDataItem) => ({
                 date: item.date,
                 value: item.metric_value,
             }))
@@ -50,7 +55,7 @@ const ChartCard = () => {
             height: 400,
         });
 
-        const positivityData = casesData.map((item) => ({
+        const positivityData = casesData.map((item: CovidDataItem) => ({
             name: item.date,
             value: item.metric_value,
         }));
