@@ -1,4 +1,4 @@
-import { Card, Col, Layout, Row} from 'antd';
+import { Button, Card, Col, Layout, Row} from 'antd';
 import { useEffect, useState } from 'react';
 import { Avatar } from "antd";
 import { MessageOutlined } from '@ant-design/icons';
@@ -95,10 +95,10 @@ const ChartCard = () => {
                         <div id="pcr-chart-container" style={{ width: '100%' }}></div>
                         <Row style={bottomCardStyle}>
                             <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
-                            <div>
+                            <Button shape={'circle'} type={'text'}>
                                 3
-                                <MessageOutlined style={{ marginLeft: 5, fontSize: 20 }} />
-                            </div>
+                                <MessageOutlined style={{ fontSize: 20 }} />
+                            </Button>
                         </Row>
                     </Card>
                 </Col>
@@ -113,10 +113,10 @@ const ChartCard = () => {
                         <div id="cases-chart-container" style={{ width: '100%' }}></div>
                         <Row style={bottomCardStyle}>
                             <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                            <div>
+                            <Button shape={'circle'} type={'text'}>
                                 3
-                                <MessageOutlined style={{ marginLeft: 5, fontSize: 20 }} />
-                            </div>
+                                <MessageOutlined style={{ fontSize: 20 }} />
+                            </Button>
                         </Row>
                     </Card>
                 </Col>
