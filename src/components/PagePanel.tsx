@@ -1,4 +1,5 @@
-import { Button, Layout, Row, Col } from "antd";
+import React, { useState } from 'react';
+import { Button, Layout, Row, Col, Menu, MenuProps } from "antd";
 import { DownloadOutlined, UnorderedListOutlined, FilterOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
@@ -22,21 +23,41 @@ const pageTitleStyle: React.CSSProperties = {
     paddingLeft: '12px ',
 };
 
-const pageButtonsStyle: React.CSSProperties = {
-    textAlign: 'end',
-    marginLeft: 'auto',
-};
+type MenuItem = Required<MenuProps>['items'][number];
 
+const items: MenuItem[] = [
+    {
+        label: 'Export to PDF',
+        key: 'Export',
+        icon: <DownloadOutlined/>,
+    },
+    {
+        label: 'Notes (3)',
+        key: 'Notes',
+        icon: <UnorderedListOutlined/>,
+    },
+    {
+        label: 'Filter 9+',
+        key: 'Filter',
+        icon: <FilterOutlined/>,
+    },
+];
 
 const PagePanel = () => {
+    const [current, setCurrent] = useState('mail');
+
+    const onClick: MenuProps['onClick'] = (e) => {
+        setCurrent(e.key);
+    };
+
     return (
         <Layout>
             <Row style={pageTitleStyle} gutter={[16, 16]}>
-                <Col flex="1" style={{display: "contents"}}>
+                <Col style={{ display: "contents" }}>
                     <Header style={headerStyle}>Covid statistics</Header>
                 </Col>
-                <Col flex="none">
-                    <div style={pageButtonsStyle}>
+                <Col xs={0} sm={24} style={{ flex: 'auto' }}>
+                    <div style={{ float: 'right', height: '64px', alignContent: 'center' }}>
                         <Button>
                             Export to PDF
                             <DownloadOutlined />
@@ -51,9 +72,12 @@ const PagePanel = () => {
                         </Button>
                     </div>
                 </Col>
+                <Col xs={24} sm={0} style={{ flex: 'auto'}}>
+                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={{width:'48px', borderRadius:'8px', float: 'right'}}/>
+                </Col>
             </Row>
         </Layout>
     );
-}
+};
 
 export default PagePanel;
