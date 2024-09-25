@@ -3,6 +3,7 @@ import { Layout } from "antd";
 import PagePanel from "@/components/PagePanel";
 import ChartCard from "@/components/ChartCard";
 
+
 const { Header, Content } = Layout;
 
 const headerStyle: React.CSSProperties = {
@@ -34,8 +35,8 @@ export default function Home() {
 
     return (
         <Layout>
-            <Header style={headerStyle}>Unicorn healthcare</Header>
-            <Content style={contentStyle}>
+            <Header className="header-style" >Unicorn healthcare</Header>
+            <Content className="content-style">
                 <PagePanel />
                 <ChartCard />
             </Content>

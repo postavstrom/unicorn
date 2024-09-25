@@ -25,3 +25,51 @@ body {
     text-wrap: balance;
   }
 }
+
+.header-style {
+  text-align: left;
+  color: #425168;
+  height: 64px;
+  font-weight: bold;
+  font-size: large;
+  padding-inline: 48px;
+  line-height: 64px;
+  background-color: #ffffff;
+}
+
+.content-header-style {
+  padding: 0;
+  text-align: left;
+  color: #425168;
+  height: 48px;
+  font-weight: bold;
+  font-size: large;
+  line-height: 48px;
+  background-color: #ffffff00;
+}
+
+.content-style {
+  padding: 16px 48px;
+  min-height: calc(100vh - 64px);
+}
+
+.page-title {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding-left: 12px;
+}
+
+.button-group {
+  float: right;
+  height: 64px;
+  align-content: center;
+}
+
+.menu-style {
+  width: 48px;
+  border-radius: 8px;
+  float: right;
+}
+
+

@@ -8,9 +8,6 @@ interface CovidDataItem {
     metric_value: number;
 }
 
-const bottomCardStyle: React.CSSProperties = {
-    justifyContent: 'space-between',
-};
 const ChartCard = () => {
     const [pcrData, setPcrData] = useState([]);
     const [casesData, setCasesData] = useState([]);
@@ -98,7 +95,7 @@ const ChartCard = () => {
                 >
                     <Card title="Number of PCR COVID-19 tests per day">
                         <div id="pcr-chart-container" style={{ width: '100%' }}></div>
-                        <Row style={bottomCardStyle}>
+                        <Row style={{justifyContent:'space-between'}}>
                             <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=1" />
                             <Button shape={'circle'} type={'text'}>
                                 3
@@ -116,7 +113,7 @@ const ChartCard = () => {
                 >
                     <Card title="Percentage of PCR COVID-19 tests with a positive result">
                         <div id="cases-chart-container" style={{ width: '100%' }}></div>
-                        <Row style={bottomCardStyle}>
+                        <Row style={{justifyContent:'space-between'}}>
                             <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                             <Button shape={'circle'} type={'text'}>
                                 3

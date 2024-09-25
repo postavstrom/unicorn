@@ -4,25 +4,6 @@ import { DownloadOutlined, UnorderedListOutlined, FilterOutlined } from '@ant-de
 
 const { Header } = Layout;
 
-
-const headerStyle: React.CSSProperties = {
-    padding: 0,
-    textAlign: 'left',
-    color: '#425168',
-    height: 48,
-    fontWeight: 'bold',
-    fontSize: 'large',
-    lineHeight: '48px',
-    backgroundColor: '#ffffff00',
-};
-
-const pageTitleStyle: React.CSSProperties = {
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    display: 'flex',
-    paddingLeft: '12px ',
-};
-
 type MenuItem = Required<MenuProps>['items'][number];
 
 const items: MenuItem[] = [
@@ -52,12 +33,12 @@ const PagePanel = () => {
 
     return (
         <Layout>
-            <Row style={pageTitleStyle} gutter={[16, 16]}>
+            <Row className="page-title" gutter={[16, 16]}>
                 <Col style={{ display: "contents" }}>
-                    <Header style={headerStyle}>Covid statistics</Header>
+                    <Header className="content-header-style" >Covid statistics</Header>
                 </Col>
                 <Col xs={0} sm={24} style={{ flex: 'auto' }}>
-                    <div style={{ float: 'right', height: '64px', alignContent: 'center' }}>
+                    <div className="button-group">
                         <Button>
                             Export to PDF
                             <DownloadOutlined />
@@ -73,7 +54,7 @@ const PagePanel = () => {
                     </div>
                 </Col>
                 <Col xs={24} sm={0} style={{ flex: 'auto'}}>
-                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} style={{width:'48px', borderRadius:'8px', float: 'right'}}/>
+                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} className="menu-style"/>
                 </Col>
             </Row>
         </Layout>
